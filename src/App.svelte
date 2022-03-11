@@ -2,6 +2,9 @@
 	//viene lo de euro
 	let coins = [];
 	let btc = {};
+	let dolar = [];
+	let dolarven = {};
+
 	const loadCoins = async () => {
 		const res = await fetch(
 			"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
@@ -12,6 +15,18 @@
 		console.log(btc);
 	};
 	loadCoins();
+
+	const loadDolar = async () => {
+		const res = await fetch(
+			"https://s3.amazonaws.com/dolartoday/data.json"
+		);
+		const data = await res.json();
+		dolar = data;
+		dolarven = dolar.USD.transferencia;
+		const math = dolarven * btc;
+	};
+
+	loadDolar();
 </script>
 
 <main>
@@ -152,7 +167,7 @@
 			<br />
 
 			<div class="row my-5">
-				<div class="col">
+				<div class="col-xxl-3 col-md-6 mb-5">
 					<div
 						class="d-flex justify-content-center align-items-center"
 					>
@@ -170,7 +185,7 @@
 						Confirmamos tu identidad antes de realizar el envio.
 					</p>
 				</div>
-				<div class="col">
+				<div class="col-xxl-3 col-md-6 mb-5 ">
 					<div
 						class="d-flex justify-content-center align-items-center"
 					>
@@ -188,7 +203,7 @@
 						Verifica disponibilidad antes de una transaccion.
 					</p>
 				</div>
-				<div class="col">
+				<div class="col-xxl-3 col-md-6 mb-5">
 					<div
 						class="d-flex justify-content-center align-items-center"
 					>
@@ -208,7 +223,7 @@
 						8:00 am a 7:00 pm.
 					</p>
 				</div>
-				<div class="col">
+				<div class="col-xxl-3 col-md-6 mb-5">
 					<div
 						class="d-flex justify-content-center align-items-center"
 					>
@@ -255,7 +270,7 @@
 	<section class="container-fluid bg-white">
 		<div class="container py-5">
 			<div class="row">
-				<div class="col-8">
+				<div class="col-lg-8 col-sm-12">
 					<h2 class="display-3">
 						<b
 							>Cotiza tasa actualizada y envia tu dinero desde
@@ -267,15 +282,11 @@
 						Obten ahora una tasa especial en tu primer envio.
 					</p>
 				</div>
-				<div class="col-4">
+				<div class="col-md-4 col-sm-12">
 					<div class="btn btn-primary rounded p-3 my-1">
 						<div class="d-flex">
-							<img
-								src="img/espana.png"
-								alt=""
-								style="width: 8rem;"
-							/>
-							<p class="my-auto mx-3" style="font-size: 2.5rem;">
+							<img src="img/espana.png" alt="" style="" />
+							<p class="my-auto mx-3 " style="font-size: 2.5rem;">
 								España
 							</p>
 						</div>
@@ -284,14 +295,13 @@
 					<div class="btn btn-warning rounded p-3 my-1">
 						<p class="text-start">Tasa de cambio</p>
 						<div class="d-flex">
-							<img
-								src="img/espana.png"
-								alt=""
-								style="width: 8rem;"
-							/>
-							<p class="my-auto mx-3" style="font-size: 2.5rem;">
-								España
-							</p>
+							{#if dolarven > 0}
+								<p class="display-5">
+									<strong>{dolarven} Bs / Usd</strong>
+								</p>
+							{:else}
+								<p>Cargando...</p>
+							{/if}
 						</div>
 					</div>
 
