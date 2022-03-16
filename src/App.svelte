@@ -66,13 +66,15 @@
 						>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link letra2 text-white" href="/#servicios"
-							>Servicios</a
+						<button
+							class="nav-link  text-white bg-primary border-0"
+							data-bs-toggle="modal"
+							data-bs-target="#exampleModal">Registrate</button
 						>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link letra2 text-white" href="/#blog"
-							>Blogs</a
+						<a class="nav-link letra2 text-white" href="/#tasas"
+							>Tasas</a
 						>
 					</li>
 					<li class="nav-item">
@@ -116,20 +118,140 @@
 								</h1>
 
 								<div class="row d-flex justify-content-around">
-									<div class="col-xxl-4 col-lg-6 ">
-										<a
-											href="trading"
+									<div
+										class="col-xxl-4 col-lg-6 "
+										data-bs-toggle="modal"
+										data-bs-target="#exampleModal"
+									>
+										<button
+											type="button"
 											class="btn btn-primary  rounded-pill px-4 my-2 "
 											style="font-size: 1.2rem;"
-											><i class="" /><i
-												class="fas fa-chevron-circle-right"
-											/> Resgistrate</a
+											data-bs-toggle="modal"
+											data-bs-target="#exampleModal"
 										>
+											Registrate
+										</button>
+									</div>
+
+									<!-- Modal -->
+									<div
+										class="modal fade"
+										id="exampleModal"
+										tabindex="-1"
+										aria-labelledby="exampleModalLabel"
+										aria-hidden="true"
+									>
+										<div
+											class="modal-dialog modal-dialog-centered"
+										>
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5
+														class="modal-title text-dark"
+														id="exampleModalLabel"
+													>
+														Registrate!
+													</h5>
+													<button
+														type="button"
+														class="btn-close"
+														data-bs-dismiss="modal"
+														aria-label="Close"
+													/>
+												</div>
+												<div
+													class="modal-body text-black"
+												>
+													<div class="card-body ">
+														<form
+															action="/add"
+															method="POST"
+														>
+															<div class="mb-3">
+																<input
+																	type="text"
+																	name="nombre"
+																	class="form-control "
+																	placeholder="Nombre"
+																	required
+																/>
+															</div>
+
+															<div
+																class="mb-3 text-black"
+															>
+																<input
+																	id="phone"
+																	name="phone"
+																	type="tel"
+																	placeholder="Telefono"
+																	class="form-control"
+																	required
+																/>
+																<span
+																	id="valid-msg"
+																	class="hide"
+																/>
+																<span
+																	id="error-msg"
+																	class="hide"
+																/>
+															</div>
+
+															<div class="mb-3">
+																<input
+																	type="email"
+																	name="correo"
+																	class="form-control "
+																	placeholder="Correo "
+																	required
+																/>
+															</div>
+
+															<div
+																class="mb-3 form-check"
+															>
+																<input
+																	type="checkbox"
+																	class=""
+																	id="exampleCheck1"
+																	required
+																/>
+																<label
+																	class="form-check-label"
+																	for="exampleCheck1"
+																	>Acepto los
+																	Terminos</label
+																>
+															</div>
+
+															<div class="mb-3">
+																<button
+																	class="btn btn-danger btn-block px-5"
+																	type="submit"
+																>
+																	Enviar
+																</button>
+															</div>
+														</form>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<button
+														type="button"
+														class="btn btn-secondary"
+														data-bs-dismiss="modal"
+														>Close</button
+													>
+												</div>
+											</div>
+										</div>
 									</div>
 
 									<div class="col">
 										<a
-											href="trading"
+											href="/#tasas"
 											class="btn text-white border rounded-pill my-2  "
 											style="font-size: 1.2rem;"
 											>$ Ver nuestras tasas</a
@@ -270,7 +392,7 @@
 
 	<section class="container-fluid bg-white">
 		<div class="container py-5">
-			<div class="row">
+			<div class="row" id="tasas">
 				<div class="col-lg-8 ">
 					<h2 class="display-3">
 						<b
@@ -298,11 +420,13 @@
 					</div>
 
 					<div class="btn espana btn-warning rounded p-3 my-1">
-						<p class="text-start">Tasa de cambio</p>
-						<div class="d-flex">
+						<p class="text-start" style="font-size: 1.5rem;">
+							Tasa de cambio
+						</p>
+						<div class="">
 							{#if dolarven > 0}
-								<p class="display-5">
-									<strong>{dolarven} Bs / Usd</strong>
+								<p class="display-3 d-flex ">
+									<strong>{dolarven} Bs/Eur</strong>
 								</p>
 							{:else}
 								<p>Cargando...</p>
@@ -444,7 +568,7 @@
 			class="text-center p-3 letra2"
 			style="background-color: rgba(0, 0, 0, 0.2);"
 		>
-			Copyright © 2022 Criptoaprendes - Reservados todos los derechos
+			Copyright © 2022 RemiTransfer - Reservados todos los derechos
 			<!--<a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a> -->
 		</div>
 		<!-- Copyright -->
