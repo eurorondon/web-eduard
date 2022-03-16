@@ -249,7 +249,7 @@
 
 		<div class="d-flex justify-content-center">
 			<p
-				class="btn  btn-primary rounded-md-pill "
+				class="btn  btn-primary rounded-pill "
 				style="font-size: 1.1rem;"
 			>
 				Numeros autorizados <b>+34-123456789 / +58-41212345678</b>
@@ -286,7 +286,11 @@
 				<div class="col ">
 					<div class="btn espana btn-primary rounded p-3 my-1">
 						<div class="d-flex">
-							<img src="img/espana.png" alt="" style="" />
+							<img
+								src="img/espana2.png"
+								alt=""
+								style="max-width: 7rem;"
+							/>
 							<p class="my-auto mx-3 " style="font-size: 2.5rem;">
 								España
 							</p>
