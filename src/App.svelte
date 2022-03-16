@@ -248,10 +248,11 @@
 		<br />
 
 		<div class="d-flex justify-content-center">
-			<p class="btn btn-primary rounded-pill " style="font-size: 1.5rem;">
-				Numeros autorizados para enviar tus remesas <b
-					>+34-123456789 / +58-41212345678</b
-				>
+			<p
+				class="btn  btn-primary rounded-md-pill "
+				style="font-size: 1.1rem;"
+			>
+				Numeros autorizados <b>+34-123456789 / +58-41212345678</b>
 			</p>
 		</div>
 
@@ -270,7 +271,7 @@
 	<section class="container-fluid bg-white">
 		<div class="container py-5">
 			<div class="row">
-				<div class="col-lg-8 col-sm-12">
+				<div class="col-lg-8 ">
 					<h2 class="display-3">
 						<b
 							>Cotiza tasa actualizada y envia tu dinero desde
@@ -282,8 +283,8 @@
 						Obten ahora una tasa especial en tu primer envio.
 					</p>
 				</div>
-				<div class="col-md-4 col-sm-12">
-					<div class="btn btn-primary rounded p-3 my-1">
+				<div class="col ">
+					<div class="btn espana btn-primary rounded p-3 my-1">
 						<div class="d-flex">
 							<img src="img/espana.png" alt="" style="" />
 							<p class="my-auto mx-3 " style="font-size: 2.5rem;">
@@ -292,7 +293,7 @@
 						</div>
 					</div>
 
-					<div class="btn btn-warning rounded p-3 my-1">
+					<div class="btn espana btn-warning rounded p-3 my-1">
 						<p class="text-start">Tasa de cambio</p>
 						<div class="d-flex">
 							{#if dolarven > 0}
@@ -483,6 +484,10 @@
 		margin: 0;
 	}
 
+	.espana {
+		width: 100%;
+	}
+
 	@media screen and (max-width: 1629px) {
 		.custom-shape-divider-bottom-1645573179 {
 			height: 600px;
@@ -526,11 +531,18 @@
 		.padding-100 {
 			padding-top: 70px;
 		}
+		.espana {
+			width: 50%;
+		}
 	}
 
 	@media screen and (max-width: 768px) {
 		.custom-shape-divider-bottom-1645573179 {
 			height: 230px;
+		}
+
+		.espana {
+			width: 100%;
 		}
 
 		.padding-100 {
@@ -541,6 +553,10 @@
 	@media screen and (max-width: 490px) {
 		.padding-100 {
 			padding-top: 120px;
+		}
+
+		.espana {
+			width: 100%;
 		}
 	}
 
